@@ -1,0 +1,10 @@
+
+version: "3"
+
+services:
+  keychronchecker:
+    image: jccroft1/keychronchecker:latest
+    restart: unless-stopped
+    environment:
+    - TOKEN=123:abc123
+    - CHANNEL:123
