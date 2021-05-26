@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/jccroft1/KeychronChecker/keychron"
 	"github.com/jccroft1/KeychronChecker/telegram"
 )
 
@@ -25,8 +26,11 @@ func main() {
 		return
 	}
 
-	err = telegram.SendMessage("hello_world")
-	if err != nil {
-		fmt.Println(err)
-	}
+	// err = telegram.SendMessage("hello_world")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+
+	keychron.Alert = telegram.SendMessage
+	keychron.Start()
 }
