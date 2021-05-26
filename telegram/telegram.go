@@ -32,10 +32,8 @@ type GetMeResponse struct {
 }
 
 func SendMessage(message string) error {
-
 	qs := "chat_id=%40" + Channel + "&text=" + message
 	url := fmt.Sprintf("https://api.telegram.org/bot%v/sendMessage?%v", Token, qs)
-	fmt.Println(url)
 
 	resp, err := client.Get(url)
 	if err != nil {
@@ -64,8 +62,6 @@ func GetMe() error {
 	if err != nil {
 		return err
 	}
-
-	fmt.Println(string(body))
 
 	var response GetMeResponse
 	if err := json.Unmarshal(body, &response); err != nil {

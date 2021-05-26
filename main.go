@@ -14,7 +14,6 @@ var (
 )
 
 func main() {
-	fmt.Println("Hello world!")
 	flag.Parse()
 
 	telegram.Token = *token
@@ -25,11 +24,6 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-
-	// err = telegram.SendMessage("hello_world")
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
 
 	keychron.Alert = telegram.SendMessage
 	keychron.Start()
