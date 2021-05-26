@@ -5,6 +5,8 @@ services:
   keychronchecker:
     image: jccroft1/keychronchecker:latest
     restart: unless-stopped
+    volumes:
+      - "/path/to/cache:/cache"
     environment:
     - TOKEN=123:abc123
     - CHANNEL:123
