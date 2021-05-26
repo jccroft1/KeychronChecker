@@ -6,6 +6,6 @@ COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-RUN mkdir /cache
+RUN mkdir cache
 
 CMD app -token ${TOKEN} -channel ${CHANNEL} 
